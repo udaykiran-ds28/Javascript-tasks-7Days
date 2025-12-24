@@ -1,0 +1,7 @@
+.game-container{
+    text-align: center;
+    font-size: larger;
+}
+#attempts{
+    color: red;
+}

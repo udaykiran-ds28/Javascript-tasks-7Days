@@ -1,0 +1,27 @@
+{
+  "delhi": {
+    "city": "Delhi",
+    "main": { "temp": 32, "humidity": 45 },
+    "weather": [{ "description": "hazy sunshine" }]
+  },
+  "mumbai": {
+    "city": "Mumbai",
+    "main": { "temp": 29, "humidity": 70 },
+    "weather": [{ "description": "humid and cloudy" }]
+  },
+  "chennai": {
+    "city": "Chennai",
+    "main": { "temp": 34, "humidity": 60 },
+    "weather": [{ "description": "hot and sunny" }]
+  },
+  "bengaluru": {
+    "city": "Bengaluru",
+    "main": { "temp": 26, "humidity": 55 },
+    "weather": [{ "description": "pleasant weather" }]
+  },
+  "hyderabad": {
+    "city": "Hyderabad",
+    "main": { "temp": 31, "humidity": 50 },
+    "weather": [{ "description": "clear sky" }]
+  }
+}
