@@ -1,32 +1,43 @@
-let cart=[]
-let subtotal=0
-let discount=10;
+let cart = [];
+let discount = 10;
 let gstRate = 10;
-function addtocart(product,price,quantity){
-    const items={
+
+function addtocart(product, price, quantity) {
+    const items = {
         product,
         price,
         quantity
+    };
+    cart.push(items);
+}
+
+function addItems() {
+    type=prompt("enter the product name")
+    id=Number(prompt("enter the price"))
+    quantit=Number( prompt("enther product quantity"))
+    addtocart(type,id,quantit)
+
+    document.getElementById("output").innerHTML =
+        "<p>Items added to cart successfully ✅</p>";
+}
+
+function calculator() {
+    let subtotal = 0;
+
+    for (let item of cart) {
+        subtotal += item.price * item.quantity;
     }
-    cart.push(items)
-}
-addtocart("mobile",225,2)
-addtocart("laptop",6000,1)
-console.log(cart)// printing the cart items
-function calculator(){
-  let subtotal=0
 
+    let gstAmount = (subtotal * gstRate) / 100;
+    let amountWithGST = subtotal + gstAmount;
+    let discountPrice = (amountWithGST * discount) / 100;
+    let totalPrice = amountWithGST - discountPrice;
 
-for (let item of cart) {
-  subtotal += item.price * item.quantity;
+    document.getElementById("output").innerHTML = `
+        <h3>Bill Summary</h3>
+        <p><strong>Subtotal:</strong> ₹${subtotal}</p>
+        <p><strong>GST (10%):</strong> ₹${gstAmount}</p>
+        <p><strong>Discount (10%):</strong> ₹${discountPrice}</p>
+        <h4><strong>Total Price:</strong> ₹${totalPrice}</h4>
+    `;
 }
-let gstAmount = (subtotal * gstRate) / 100 + subtotal
-let discount_price=(gstAmount * discount)/100;
-console.log(subtotal ,"products price")
-console.log(gstAmount,"GST amount")
-console.log(discount_price,"Total discount");
-
-let total_price = subtotal + gstAmount - discount_price ;
-console.log(total_price," total price ")
-}
-calculator()
